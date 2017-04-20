@@ -1,4 +1,21 @@
 #!/usr/bin/env node
 
-// execute the main script
-require('./cftester.js');
+const program = require('commander')
+ 
+program
+    .version('1.0.0')
+    .option('-i, --init', 'initialize the configuration for any coldfusion project')
+    .parse(process.argv)
+
+if (program.init) {
+    require('./init.js')
+} else {
+    const fs = require('fs');
+
+    if (fs.existsSync(`${process.cwd()}/cf-tester-config.json`)) {
+        require('./cftester.js')
+    } else {
+        const colors = require('colors')
+        console.log('Config not found. Run '.red + '`cftester --init`'.white + ' first'.red)
+    }
+} 
