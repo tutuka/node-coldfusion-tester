@@ -11,7 +11,7 @@ const findTests = require('../lib/find-tests')
 const runTests = require('../lib/run-tests')
 
 console.log('\x1Bc')
-console.log(`Watching files for changes on %s ...`.yellow, `${config.host}${config.basePath}`.white.underline)
+console.log(`Watching files for changes on %s ...`.yellow, `${config.host}/${config.basePath}`.white.underline)
 
 chokidar.watch('.', {
   ignored: /(^|[\/\\])\../,
