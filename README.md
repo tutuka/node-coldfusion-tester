@@ -47,7 +47,7 @@ This in turn will create a `cf-tester-config.json` file in the current folder co
 }
 ```
 
-## Start watching you files
+## Start watching your files
 In the terminal you can now type:
 
 ```
