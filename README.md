@@ -17,7 +17,7 @@ npm install -g node-coldfusion-tester
 Navigate to your project folder in your terminal of choice and type:
 
 ```bash
-cftester --install
+cftester --init
 ```
 
 You will be asked some questions:
