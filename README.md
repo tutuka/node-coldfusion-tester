@@ -29,6 +29,7 @@ prompt: Name of the folder in your project that contains the tests:  (test)
 prompt: List of folders inside your test folder containing different kinds of tests (e.g. integration and unit):  (spec,unit)
 prompt: Path from the host to the test runner:  (testbox/system/runners/HTMLRunner.cfm)
 prompt: Suffix to be used for test files:  (Spec)
+prompt: List of folders in your project to be ignored from watching. This supports anytime matchers (https://github.com/es128/anymatch): (**/testbox/**)
 ```
 
 This in turn will create a `cf-tester-config.json` file in the current folder containing:

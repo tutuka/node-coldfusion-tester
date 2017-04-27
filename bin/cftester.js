@@ -14,7 +14,7 @@ console.log('\x1Bc')
 console.log(`Watching files for changes on %s ...`.yellow, `${config.host}/${config.basePath}`.white.underline)
 
 chokidar.watch('.', {
-  ignored: /(^|[\/\\])\../,
+  ignored: [...config.ignored, /(^|[\/\\])\../],
   ignoreInitial: true
 }).on('all', (event, path) => {
   let tests = findTests(path)

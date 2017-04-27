@@ -32,6 +32,10 @@ const schema = {
         testFileSuffix: {
             description: 'Suffix to be used for test files',
             default: config.testFileSuffix
+        },
+        ignored: {
+            description: 'List of folders in your project to be ignored from watching. This supports anytime matchers (https://github.com/es128/anymatch)',
+            default: config.ignored
         }
     }
 }
@@ -39,14 +43,15 @@ const schema = {
 prompt.start()
 
 prompt.get(schema, function (err, result) {
-    const { host, basePath, testFolder, testTypes, testRunner, testFileSuffix } = result
+    const { host, basePath, testFolder, testTypes, testRunner, testFileSuffix, ignored } = result
     const newConfig = {
         host,
         basePath,
         testFolder,
         testTypes: testTypes.split(','),
         testRunner,
-        testFileSuffix
+        testFileSuffix,
+        ignored: ignored.split(',')
     }
     
     fs.writeFileSync(`${process.cwd()}/cf-tester-config.json`, JSON.stringify(newConfig, null, 2), 'utf-8');
