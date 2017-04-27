@@ -44,7 +44,10 @@ This in turn will create a `cf-tester-config.json` file in the current folder co
     "unit"
   ],
   "testRunner": "testbox/system/runners/HTMLRunner.cfm",
-  "testFileSuffix": "Spec"
+  "testFileSuffix": "Spec",
+  "ignored": [
+    "**/testbox/**"
+  ]
 }
 ```
 
