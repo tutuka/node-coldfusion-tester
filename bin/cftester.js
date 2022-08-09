@@ -17,6 +17,7 @@ chokidar.watch('.', {
   ignored: [...config.ignored, /(^|[\/\\])\../],
   ignoreInitial: true
 }).on('all', (event, path) => {
+  console.log(`Change detected for ${path}`)
   let tests = findTests(path)
   runTests(tests)
 })
